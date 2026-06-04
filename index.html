@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Aplicativo de previsão do tempo moderno e responsivo.">
+    
+    <title>Weather App | Previsão do Tempo</title>
+
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <main class="weather-container">
+        <header>
+            <h1>Weather App</h1>
+            
+            <form id="search-form" aria-label="Formulário de busca de cidade">
+                <label for="city-input" class="sr-only">Digite o nome da cidade</label>
+                <input 
+                    type="text" 
+                    id="city-input" 
+                    placeholder="Buscar cidade..." 
+                    required 
+                    autocomplete="off"
+                >
+                <button type="submit" aria-label="Buscar previsão">
+                    Buscar
+                </button>
+            </form>
+        </header>
+
+        <section id="weather-data" class="hidden" aria-live="polite">
+            </section>
+
+        <section id="error-message" class="hidden" aria-live="assertive">
+            <p>Cidade não encontrada. Tente novamente.</p>
+        </section>
+    </main>
+
+    <script src="./js/app.js" type="module"></script>
+</body>
+</html>
