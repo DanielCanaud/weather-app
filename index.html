@@ -12,7 +12,7 @@
 <body>
     <main class="weather-container">
         <header>
-            <h1>Weather App</h1>
+            <h1>Previsão do tempo</h1>
             
             <form id="search-form" aria-label="Formulário de busca de cidade">
                 <label for="city-input" class="sr-only">Digite o nome da cidade</label>
@@ -22,15 +22,34 @@
                     placeholder="Buscar cidade..." 
                     required 
                     autocomplete="off"
+                    list="suggestions"
                 >
+                <datalist id="suggestions"></datalist>
                 <button type="submit" aria-label="Buscar previsão">
                     Buscar
                 </button>
             </form>
         </header>
 
-        <section id="weather-data" class="hidden" aria-live="polite">
-            </section>
+        <div id="weather-data" class="weather-info hidden">
+            <h2 id="city-name">
+                <span id="city">Nome da Cidade</span>
+                <img id="country" src="" alt="Bandeira do País">
+            </h2>
+            
+            <p id="temperature"><span>0</span>&deg;C</p>
+            
+            <div id="description-container">
+                <p id="description">Descrição do clima</p>
+
+                <img id="weather-icon" src="" alt="Ícone do Clima">
+            </div>
+            
+            <div id="details-container">
+                <p id="humidity">Umidade: <span>0</span>%</p>
+                <p id="wind">Vento: <span>0</span> km/h</p>
+            </div>
+        </div>
 
         <section id="error-message" class="hidden" aria-live="assertive">
             <p>Cidade não encontrada. Tente novamente.</p>
