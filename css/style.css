@@ -1,0 +1,108 @@
+   :root {
+    --bg-gradient-start: #1CB5E0;
+    --bg-gradient-end: #000851;
+    --glass-bg: rgba(255, 255, 255, 0.1);
+    --glass-border: rgba(255, 255, 255, 0.2);
+    --text-color: #ffffff;
+    --border-radius: 16px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, var(--bg-gradient-start), var(--bg-gradient-end));
+    color: var(--text-color);
+    padding: 20px;
+}
+
+.weather-container {
+    width: 100%;
+    max-width: 400px;
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px); 
+    border: 1px solid var(--glass-border);
+    border-radius: var(--border-radius);
+    padding: 30px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+header h1 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+
+#search-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+#city-input {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.9);
+    color: #333;
+    font-size: 1rem;
+    outline: none;
+    transition: box-shadow 0.3s ease;
+}
+
+
+#city-input:focus {
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.5);
+}
+
+#search-form button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(to right, #ff7e5f, #feb47b);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s ease, filter 0.3s;
+}
+
+#search-form button:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.1);
+}
+
+
+.hidden {
+    display: none !important;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+#error-message p {
+    background: rgba(255, 76, 76, 0.8);
+    padding: 10px;
+    border-radius: 8px;
+    margin-top: 15px;
+    font-weight: 500;
+}
