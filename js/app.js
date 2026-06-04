@@ -41,7 +41,7 @@ const getCitySuggestions = async (query) => {
 
 /**
  * Busca os dados do clima de uma cidade específica
- * @param {string} city - Nome da cidade
+ * @param {string} city 
  */
 const getWeatherData = async (city) => {
     try {
@@ -73,7 +73,6 @@ const showWeatherData = (data) => {
     const currentDate = formatDate();
     const countryFlagUrl = `https://flagsapi.com/${sys.country}/flat/64.png`;
     
-    // Mapeamento de imagens de fundo baseadas na condição do tempo
     const weatherImages = {
         Clear: "https://images.unsplash.com/photo-1504386106331-3e4e71712b38?q=80&w=1600",
         Clouds: "https://images.unsplash.com/photo-1534088568595-a066f410bcda?q=80&w=1600",
@@ -130,14 +129,13 @@ const showError = () => {
     errorMessage.classList.remove('hidden');
 };
 
-// Evento para preenchimento automático (Autocomplete)
 cityInput.addEventListener('input', (e) => {
     clearTimeout(debounceTimer);
     const query = e.target.value.trim();
     
     debounceTimer = setTimeout(() => {
         getCitySuggestions(query);
-    }, 500); // Espera 500ms após o usuário parar de digitar
+    }, 500); 
 });
 
 searchForm.addEventListener('submit', async (e) => {
@@ -146,7 +144,6 @@ searchForm.addEventListener('submit', async (e) => {
     const city = cityInput.value.trim();
     if (!city) return;
 
-    // UI Feedback: Loading state
     searchButton.disabled = true;
     const originalBtnText = searchButton.innerText;
     searchButton.innerText = "Buscando...";
@@ -169,6 +166,6 @@ searchForm.addEventListener('submit', async (e) => {
         searchButton.innerText = originalBtnText;
         cityInput.value = '';
         cityInput.focus();
-        suggestionsList.innerHTML = ""; // Limpa sugestões após busca
+        suggestionsList.innerHTML = ""; 
     }
 });
